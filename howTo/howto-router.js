@@ -28,8 +28,8 @@ router.get("/:id", (req, res) => {
       .catch(() => {res.status(500).json({ message: 'does not compute'})});
 });
 
- //get by author
-router.get("/:author", (req, res) => {
+//get by author
+router.get("/author/:author", (req, res) => {
     howto.findByAuthor(req.params.author)
       .then(data => {res.json(data)})
       .catch(() => {res.status(500).json({ message: 'does not compute'})});

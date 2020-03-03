@@ -1,1 +1,4 @@
 node_modules
+
+# Mac cruft
+.DS_Store

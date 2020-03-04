@@ -24,7 +24,9 @@ router.get("/hash", (req, res) => {
 
 const authenticate = require('../auth/authenticate-middleware.js');
 const authRouter = require('../auth/auth-router.js');
+
 const howtoRouter = require('../howTo/howto-router');
+
 
 const server = express();
 

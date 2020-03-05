@@ -3,6 +3,7 @@ const router = require("express").Router();
 
 const howto = require("./howto-model");
 const hows = require('../config/dbConfig');
+const restricted = require("../auth/authenticate-middleware");
 
 //get all how to
 router.get("/", (req, res) => {
@@ -43,7 +44,7 @@ router.delete('/:id', (req, res) => {
 });
 
 //edit how to
-router.put('/:id', (req, res) => {
+router.put('/:id', restricted, (req, res) => {
     const changes = req.body;
     const id = req.params.id;
     hows('howto').where({id}).update(changes)
@@ -52,5 +53,3 @@ router.put('/:id', (req, res) => {
 });
 
 module.exports = router;
-
-

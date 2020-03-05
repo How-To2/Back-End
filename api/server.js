@@ -39,7 +39,7 @@ server.use('/api/howto', howtoRouter);
 server.use('/api/mvp2', mvp2Router);
 
 
-server.get("/", (req, res) => {res.send('this is a thing :p')});
+server.get("/", (req, res) => {res.send('this is an updated thing :p')});
 
 
 module.exports = server;

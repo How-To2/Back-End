@@ -14,11 +14,10 @@ router.post("/register", (req, res) => {
 
   Users.add(user)
     .then(saved => {
-      req.session.loggedIn = true;
       res.status(201).json(saved);
     })
     .catch(error => {
-      res.status(500).json(error);
+      res.status(401).json( console.log(error) );
     });
 });
 
@@ -30,15 +29,13 @@ router.post("/login", (req, res) => {
     .then(user => {
      if(user && bcrypt.compareSync(password, user.password)) {
          const token = generateToken(user)
-       req.session.loggedIn = true;
-       req.session.user = user.username;
         res.status(200).json({ message: `Sup ${user.username}!`, token })
       } else{
         res.status(401).json({ message: "Invalid" });
       }
     })
     .catch(error => {
-      res.status(500).json(error);
+      res.status(500).json(console.log(error));
     });
 });
 

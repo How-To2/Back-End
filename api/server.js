@@ -34,7 +34,7 @@ server.use(helmet());
 server.use(cors());
 server.use(express.json());
 
-server.use('/api/auth', authRouter, authenticate);
+server.use('/api/auth', authRouter);
 server.use('/api/howto', howtoRouter);
 
 

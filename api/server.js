@@ -38,7 +38,7 @@ server.use('/api/auth', authRouter);
 server.use('/api/howto', howtoRouter);
 
 
-server.get("/", (req, res) => {res.send('this is a thing :p')});
+server.get("/", (req, res) => {res.send('this is an updated thing :p')});
 
 
 module.exports = server;

@@ -10,13 +10,11 @@ describe('server.js', function() {
         it('returns a 201 OK', function(){
             request(server) 
             .post('/register')
-            .set('Accept', 'application/json')
             .expect(201)
         })
         it('responds with 404', function()  {
             request(server)
               .post('/register')
-              .set('Accept', 'application/json')
               .then(res => {
                 expect(res.status).toBe(404);
               });
@@ -37,13 +35,11 @@ describe('server.js', function() {
         it('returns a 200 OK', function(){
             request(server) 
             .post('/login')
-            .set('Accept', 'application/json')
             .expect(200)
         })
         it('responds with 404', function()  {
             request(server)
               .post('/login')
-              .set('Accept', 'application/json')
               .then(res => {
                 expect(res.status).toBe(404);
               });
